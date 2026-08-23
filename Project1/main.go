@@ -2,42 +2,15 @@ package main
 
 import "fmt"
 
-type Animal interface {
-	Speak() string
+type Calculator struct {
+	CurrentInput  string  // Число, которое пользователь ввоодит
+	Display       string  // Число, которое горит на экране(ввод/результат)
+	PreviousValue float64 // Первое число, которое было введено до начала операций
+	Operation     string  // +, -, /, *
+	IsNewInput    bool    // Надо ли стереть число(превышает ли его длина 8 цифр)
 }
 
-type Dog struct {
-	Name string
-}
-
-func (d *Dog) Speak() string {
-	return "Woof!"
-}
-
-type Cat struct {
-	Name string
-}
-
-func (c *Cat) Speak() string {
-	return "Meow!"
-}
-
-type Cow struct {
-	Name string
-}
-
-func (c *Cow) Speak() string {
-	return "Moo!"
-}
-
-func main() {
-	animals := []Animal{
-		&Dog{"Fido"},
-		&Cat{"Fluffy"},
-		&Cow{"Betsy"},
-	}
-
-	for _, animal := range animals {
-		fmt.Println(animal.Speak())
-	}
+func (v *Calculator) getting() {
+	fmt.Scan(&v.CurrentInput)
+	v.Display = v.CurrentInput
 }
