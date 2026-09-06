@@ -103,17 +103,17 @@ func main() {
 		widget.NewButton("1", func() { pressDigit("1") }),
 		widget.NewButton("2", func() { pressDigit("2") }),
 		widget.NewButton("3", func() { pressDigit("3") }),
-		widget.NewButton("+", func() { pressDigit("+") }),
+		widget.NewButton("+", func() { pressOper("+") }),
 
 		widget.NewButton("4", func() { pressDigit("4") }),
 		widget.NewButton("5", func() { pressDigit("5") }),
 		widget.NewButton("6", func() { pressDigit("6") }),
-		widget.NewButton("-", func() { pressDigit("-") }),
+		widget.NewButton("-", func() { pressOper("-") }),
 
 		widget.NewButton("7", func() { pressDigit("7") }),
 		widget.NewButton("8", func() { pressDigit("8") }),
 		widget.NewButton("9", func() { pressDigit("9") }),
-		widget.NewButton("*", func() { pressDigit("*") }),
+		widget.NewButton("*", func() { pressOper("*") }),
 
 		widget.NewButton("Back", func() { pressBack() }),
 		widget.NewButton("0", func() { pressDigit("0") }),
@@ -127,5 +127,4 @@ func main() {
 	)
 	window.SetContent(mainLayout)
 	window.ShowAndRun()
-	ap.Run()
 }
