@@ -116,9 +116,9 @@ func main() {
 		widget.NewButton("*", func() { pressOper("*") }),
 
 		widget.NewButton("Back", func() { pressBack() }),
+		equalBtn,
 		widget.NewButton("0", func() { pressDigit("0") }),
 		widget.NewButton(":", func() { pressOper(":") }),
-		equalBtn,
 	)
 	// Склейка Дисплея и Кнопок
 	mainLayout := container.NewVBox(
